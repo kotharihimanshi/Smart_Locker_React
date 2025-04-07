@@ -1,36 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
-import { Link } from 'react-router';
-
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [showModal, setShowModal] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
- 
+
 
   return (
     <>
       <nav className="bg-white dark:bg-gray-900 shadow-md fixed top-0 left-0 right-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-          <div className="text-2xl font-bold text-gray-900 dark:text-white">SmartLocker</div>
+          {/* Brand */}
+          <Link to="/" className="text-2xl font-bold text-gray-900 dark:text-white">
+            SmartLocker
+          </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-6 text-gray-700 dark:text-gray-200">
+          <div className="hidden md:flex items-center space-x-6 text-gray-700 dark:text-gray-200">
             <a href="#home" className="hover:text-blue-600">Home</a>
             <a href="#features" className="hover:text-blue-600">Features</a>
             <a href="#how-it-works" className="hover:text-blue-600">How It Works</a>
             <a href="#contact" className="hover:text-blue-600">Contact</a>
-            <Link to="/login">Login</Link>
-
+            <Link to="/find-lockers" className="hover:text-blue-600">Find Lockers</Link>
           </div>
 
-          {/* Right Icons */}
+          {/* Right Side: Theme toggle & Login */}
           <div className="flex items-center space-x-4">
-         
+            
 
-            {/* Mobile Menu Button */}
+            <Link
+              to="/login"
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300"
+            >
+              Login
+            </Link>
+
+            {/* Mobile menu toggle */}
             <button
               className="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none"
               onClick={() => setIsMobileMenuOpen(prev => !prev)}
@@ -46,20 +52,18 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Nav */}
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden px-4 pb-4 bg-white dark:bg-gray-900">
-            <a href="#home" className="block py-2 text-gray-700 dark:text-gray-200 hover:text-blue-600">Home</a>
-            <a href="#features" className="block py-2 text-gray-700 dark:text-gray-200 hover:text-blue-600">Features</a>
-            <a href="#how-it-works" className="block py-2 text-gray-700 dark:text-gray-200 hover:text-blue-600">How It Works</a>
-            <a href="#contact" className="block py-2 text-gray-700 dark:text-gray-200 hover:text-blue-600">Contact</a>
-            <button onClick={() => setShowModal(true)} className="block py-2 text-left text-gray-700 dark:text-gray-200 hover:text-blue-600">Login</button>
+          <div className="md:hidden px-4 pb-4 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200">
+            <a href="#home" className="block py-2 hover:text-blue-600">Home</a>
+            <a href="#features" className="block py-2 hover:text-blue-600">Features</a>
+            <a href="#how-it-works" className="block py-2 hover:text-blue-600">How It Works</a>
+            <a href="#contact" className="block py-2 hover:text-blue-600">Contact</a>
+            <Link to="/find-lockers" className="block py-2 hover:text-blue-600">Find Lockers</Link>
+            <Link to="/login" className="block py-2 hover:text-blue-600">Login</Link>
           </div>
         )}
       </nav>
-
-      
-      
     </>
   );
 };
