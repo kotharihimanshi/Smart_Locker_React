@@ -3,7 +3,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Signup from './pages/Signup'; 
 import FindLockers from './pages/Lockers';
-
+import ScrolltoHash from './components/ScrolltoHash'
 
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -14,6 +14,7 @@ function App() {
   return (
     <div className="font-sans">
       <Navbar />
+      <ScrolltoHash />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

@@ -30,7 +30,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 px-4">
+    <div id='signup' className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 px-4">
       <div className="w-full max-w-md bg-white dark:bg-gray-800 p-8 rounded shadow-md">
         <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-6">Create an Account</h2>
         {message && <p className="text-green-500 text-center mb-4">{message}</p>}

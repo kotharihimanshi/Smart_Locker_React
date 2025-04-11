@@ -1,35 +1,51 @@
 import React, { useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+
+  const NavLink = ({ to, label }) => {
+    const location = useLocation();
+    const isHome = location.pathname === '/';
+
+    return isHome ? (
+      <a href={to} className="hover:text-blue-600">{label}</a>
+    ) : (
+      <Link to={`/${to}`} className="hover:text-blue-600">{label}</Link>
+    );
+  };
+
 
   return (
     <>
       <nav className="bg-white dark:bg-gray-900 shadow-md fixed top-0 left-0 right-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-          
+
           <Link to="/" className="text-2xl font-bold text-gray-900 dark:text-white">
             SmartLocker
           </Link>
-         
+
+
           <div className="hidden md:flex items-center space-x-6 text-gray-700 dark:text-gray-200">
-            <a href="#home" className="hover:text-blue-600">Home</a>
-            <a href="#features" className="hover:text-blue-600">Features</a>
-            <a href="#how-it-works" className="hover:text-blue-600">How It Works</a>
-            <a href="#contact" className="hover:text-blue-600">Contact</a>
+            <NavLink to="#home" label="Home" />
+            <NavLink to="#features" label="Features" />
+            <NavLink to="#how-it-works" label="How It Works" />
+            <NavLink to="#contact" label="Contact" />
             <Link to="/find-lockers" className="hover:text-blue-600">Find Lockers</Link>
           </div>
-     
-          <div className="flex items-center space-x-4">      
+
+          <div className="flex items-center space-x-4">
             <Link
               to="/login"
               className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300"
             >
               Login
             </Link>
-         
+
+
             <button
               className="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none"
               onClick={() => setIsMobileMenuOpen(prev => !prev)}
@@ -45,7 +61,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        
+
         {isMobileMenuOpen && (
           <div className="md:hidden px-4 pb-4 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200">
             <a href="#home" className="block py-2 hover:text-blue-600">Home</a>
