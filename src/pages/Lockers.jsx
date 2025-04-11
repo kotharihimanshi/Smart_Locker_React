@@ -48,7 +48,7 @@ const FindLockers = () => {
         Choose your city and find the closest SmartLocker near you.
       </p>
 
-      {/* Controls */}
+     
       <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-10">
         <select
           value={selectedCity}
@@ -69,7 +69,7 @@ const FindLockers = () => {
         />
       </div>
 
-      {/* Locations List */}
+     
       {filteredLocations.length > 0 ? (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filteredLocations.map((loc, index) => (

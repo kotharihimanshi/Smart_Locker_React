@@ -6,7 +6,7 @@ const Hero = () => {
     <section id="home" className="bg-white dark:bg-gray-950 text-gray-800 dark:text-white pt-60 pb-40 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         
-        {/* Text Content */}
+        
         <div>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6">
             Secure. Smart. Seamless.
@@ -30,7 +30,6 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Illustration */}
         <div className="flex justify-center">
           <div className="relative w-full max-w-md">
             <div className="absolute inset-0 bg-blue-200 dark:bg-blue-900 rounded-full blur-3xl opacity-30 animate-pulse"></div>

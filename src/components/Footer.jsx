@@ -23,7 +23,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Social Media */}
+        
         <div>
           <h3 className="text-xl font-semibold mb-3 text-purple-300">Follow Us</h3>
           <div className="flex justify-center md:justify-start gap-5 text-gray-300 text-xl">
@@ -34,7 +34,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright */}
       <div className="mt-10 text-center text-gray-500 text-sm border-t border-gray-700 pt-5">
         &copy; {new Date().getFullYear()} SmartLocker. All rights reserved.
       </div>

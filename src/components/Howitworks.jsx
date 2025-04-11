@@ -29,7 +29,7 @@ const HowItWorks = () => {
         <h2 className="text-4xl font-bold text-center mb-12">How It Works</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* Steps */}
+          
           <div className="space-y-6">
             {steps.map((step, index) => (
               <div key={index} className="bg-white dark:bg-gray-800 shadow-md rounded-2xl p-6 flex items-start gap-4">
@@ -42,7 +42,7 @@ const HowItWorks = () => {
             ))}
           </div>
 
-          {/* Video */}
+          
           <div className="w-full h-100 aspect-w-16 aspect-h-9">
             <iframe
               className="w-full h-full rounded-lg shadow-lg"
